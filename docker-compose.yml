@@ -7,7 +7,7 @@ services:
       ports: 
         - 80:80
       volumes:
-      - ./server/nextcloud:/var/www/html
+      - ./web-servers/nextcloud:/var/www/html
       environment:
         - MYSQL_PASSWORD=${MYSQL_PASSWORD}
         - MYSQL_DATABASE=nextcloud
@@ -32,7 +32,7 @@ services:
       container_name: mariadb
       image: mariadb:10.5
       volumes:
-      - ./db/mariadb:/var/lib/mysql
+      - ./db-servers/mariadb:/var/lib/mysql
       environment:
         - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
         - MYSQL_PASSWORD=${MYSQL_PASSWORD}
